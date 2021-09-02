@@ -2,7 +2,7 @@ import express from "express"
 import listEndpoints from "express-list-endpoints"
 import mongoose from "mongoose"
 
-import blogRouter from "./services/blog/index.js"
+import blogRouter from "./services/blog/indexBlog.js"
 import {
   badRequestErrorHandler,
   catchAllErrorHandler,

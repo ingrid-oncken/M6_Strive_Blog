@@ -1,7 +1,7 @@
 import express from "express"
 import createError from "http-errors"
 
-import BlogModel from "./schema.js"
+import BlogModel from "./schemaBlog.js"
 
 const blogRouter = express.Router()
 
