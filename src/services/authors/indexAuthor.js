@@ -1,7 +1,6 @@
 import express from "express"
 import q2m from "query-to-mongo"
-
-import AuthorModel from "./schema.js"
+import AuthorModel from "./schemaAuthor.js"
 
 const authorsRouter = express.Router()
 

@@ -19,7 +19,6 @@ const userSchema = new Schema(
     comments: [
       {
         comment: { type: String, required: true },
-        commentData: Date, //try this
       },
     ],
   },
