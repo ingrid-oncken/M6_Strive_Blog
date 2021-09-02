@@ -1,8 +1,6 @@
 import mongoose from "mongoose"
 
-const { Schema, model } = mongoose
-
-const blogSchema = new Schema(
+const BlogSchema = new mongoose.Schema(
   {
     category: { type: String, required: true },
     title: { type: String, required: true },
@@ -13,12 +11,12 @@ const blogSchema = new Schema(
     },
     author: {
       name: { type: String, required: true },
+      email: { type: String, required: true },
       avatar: { type: String, required: true },
     },
     content: { type: String, required: true },
   },
-  {
-    timestamps: true, // adds createdAt and updatedAt automatically
-  }
+  { timestamps: true }
 )
-export default model("Blog", blogSchema) // bounded to the "users" collection, if it is not there it is going to be created automatically
+
+export default mongoose.model("Blog", BlogSchema)

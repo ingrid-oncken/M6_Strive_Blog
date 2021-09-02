@@ -1,24 +1,25 @@
 import express from "express"
 import createError from "http-errors"
-
 import BlogModel from "./schemaBlog.js"
 
 const blogRouter = express.Router()
 
+// create  blog 
 blogRouter.post("/", async (req, res, next) => {
   try {
-    console.log('here')
-    res.send('ok')
-    // const newBlog = new BlogModel(req.body) // here happens validation of the req.body, if it's not ok mongoose will throw a "ValidationError"
-    // const { _id } = await newBlog.save()
+    // console.log('here')
+    // res.send('ok')
+    const newBlog = new BlogModel(req.body) // here happens validation of the req.body, if it's not ok mongoose will throw a "ValidationError"
+    const { _id } = await newBlog.save()
 
-    // res.status(201).send({ _id })
+    res.status(201).send({ _id })
   } catch (error) {
     console.log(error)
     next(error)
   }
 })
 
+// get all blogs
 blogRouter.get("/", async (req, res, next) => {
   try {
     const blog = await BlogModel.find({})

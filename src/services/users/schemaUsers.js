@@ -16,7 +16,12 @@ const userSchema = new Schema(
 
       required: true,
     },
-    comments: [{ type: String, required: true }],
+    comments: [
+      {
+        comment: { type: String, required: true },
+        commentData: Date, //try this
+      },
+    ],
   },
   { timestamps: true }
 )
