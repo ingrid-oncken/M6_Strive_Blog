@@ -1,12 +1,16 @@
-import mongoose from "mongoose"
+import mongoose from 'mongoose'
 
 const { Schema, model } = mongoose
 
-const AuthorSchema = new Schema({author: { type: Schema.Types.ObjectId, ref: "Author" },{ timestamps: true } )
+const AuthorSchema = new Schema(
+  {
+    author: { type: String, required: true },
+  },
+  { timestamps: true }
+)
 
-export default model("Author", AuthorSchema)
-  // {
-  //   name: { type: String, required: true },
-  //   surname: { type: String, required: true },
-  // },
-  
+export default model('Author', AuthorSchema)
+// {
+//   name: { type: String, required: true },
+//   surname: { type: String, required: true },
+// },
